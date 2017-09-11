@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         plugin = {"pretty", "html:target/cucumber"},
         dryRun = false,
-        glue = {"nl.thewally.stepdefs"},
+        glue = {"nl.thewally.cucumberwithselenium3.stepdefs"},
         features = {"src/test/resources/features"}
 //        ,tags = {"@x"}
 )
