@@ -19,6 +19,9 @@ public class AppContext {
     public AppContext(TestProperties properties) {
         try {
             browserDriver = new Browser(properties.getProperty("browser"));
+            if(properties.getProperty("browser").equals("FIREFOX")) {
+                System.setProperty("webdriver.gecko.driver", properties.getProperty("pathToGeckoDriver"));
+            }
         } catch (Exception e) {
             LOG.error("Error on creating application context", e);
             throw new RuntimeException("Error on creating application context", e);

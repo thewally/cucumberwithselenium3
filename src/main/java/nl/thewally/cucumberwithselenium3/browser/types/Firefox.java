@@ -1,5 +1,6 @@
 package nl.thewally.cucumberwithselenium3.browser.types;
 
+import nl.thewally.cucumberwithselenium3.properties.TestProperties;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -7,11 +8,17 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.util.Map;
 
+@Component
 public class Firefox extends BaseDriver {
+
+    @Autowired
+    private TestProperties properties;
 
     @Override
     protected Logger getLogger() {
@@ -20,8 +27,6 @@ public class Firefox extends BaseDriver {
 
     @Override
     public DesiredCapabilities setHeader(Map<String, String> headers) {
-        System.setProperty("webdriver.gecko.driver", "/home/arjen/Software/geckodriver");
-
         FirefoxProfile profile = new FirefoxProfile();
         File modifyHeaders = new File(System.getProperty("user.dir")
                 + "/src/main/resources/modify_headers.xpi");
