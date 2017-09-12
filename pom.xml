@@ -20,7 +20,7 @@
         <junit.version>4.12</junit.version>
         <!--selenium-->
         <selenium.version>3.5.3</selenium.version>
-        <phantomjsdriver.version>1.3.0</phantomjsdriver.version>
+        <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
         <phantomjs-maven-plugin.version>0.7</phantomjs-maven-plugin.version>
         <jbrowser-driver.version>0.17.9</jbrowser-driver.version>
         <!--spring-->
