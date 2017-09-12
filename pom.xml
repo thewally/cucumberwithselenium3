@@ -22,8 +22,7 @@
         <selenium.version>3.5.3</selenium.version>
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
         <phantomjs-maven-plugin.version>0.7</phantomjs-maven-plugin.version>
-        <jbrowser-driver.version>0.17.9</jbrowser-driver.version>
-        <guava.version>18.0</guava.version>
+        <webdrivermanager.version>1.6.2</webdrivermanager.version>
         <!--spring-->
         <spring.version>4.3.7.RELEASE</spring.version>
         <!--log-->
@@ -65,6 +64,11 @@
             <version>${selenium.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
             <version>${selenium.version}</version>
@@ -73,6 +77,11 @@
             <groupId>com.codeborne</groupId>
             <artifactId>phantomjsdriver</artifactId>
             <version>${phantomjsdriver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
