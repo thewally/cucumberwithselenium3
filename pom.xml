@@ -23,6 +23,7 @@
         <phantomjsdriver.version>1.4.3</phantomjsdriver.version>
         <phantomjs-maven-plugin.version>0.7</phantomjs-maven-plugin.version>
         <jbrowser-driver.version>0.17.9</jbrowser-driver.version>
+        <guava.version>18.0</guava.version>
         <!--spring-->
         <spring.version>4.3.7.RELEASE</spring.version>
         <!--log-->
@@ -83,6 +84,11 @@
                     <!--<artifactId>selenium-server</artifactId>-->
                 <!--</exclusion>-->
             <!--</exclusions>-->
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
