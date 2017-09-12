@@ -1,13 +1,12 @@
 package nl.thewally.cucumberwithselenium3.stepdefs;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import nl.thewally.cucumberwithselenium3.browser.context.AppContext;
+import nl.thewally.cucumberwithselenium3.context.AppContext;
 import nl.thewally.cucumberwithselenium3.browser.pageobjects.GenericObjects;
-import nl.thewally.cucumberwithselenium3.browser.properties.TestProperties;
+import nl.thewally.cucumberwithselenium3.properties.TestProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +19,11 @@ public class MyStepdefs {
     private static final Logger LOG = LoggerFactory.getLogger(MyStepdefs.class);
     private GenericObjects genericObjects;
 
-    @Autowired private AppContext context;
+    @Autowired
+    private AppContext context;
 
-    @Autowired private TestProperties properties;
+    @Autowired
+    private TestProperties properties;
 
     @Before
     public void prepare() throws Throwable {

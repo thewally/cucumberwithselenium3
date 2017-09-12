@@ -2,12 +2,7 @@ package nl.thewally.cucumberwithselenium3.browser.pageobjects;
 
 
 
-import nl.thewally.cucumberwithselenium3.browser.context.AppContext;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.List;
+import nl.thewally.cucumberwithselenium3.context.AppContext;
 
 public class GenericObjects {
 

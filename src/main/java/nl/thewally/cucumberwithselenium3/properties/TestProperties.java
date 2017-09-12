@@ -1,4 +1,4 @@
-package nl.thewally.cucumberwithselenium3.browser.properties;
+package nl.thewally.cucumberwithselenium3.properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

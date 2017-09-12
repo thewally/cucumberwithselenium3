@@ -1,7 +1,7 @@
-package nl.thewally.cucumberwithselenium3.browser.context;
+package nl.thewally.cucumberwithselenium3.context;
 
 import nl.thewally.cucumberwithselenium3.browser.Browser;
-import nl.thewally.cucumberwithselenium3.browser.properties.TestProperties;
+import nl.thewally.cucumberwithselenium3.properties.TestProperties;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
