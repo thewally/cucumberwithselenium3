@@ -2,11 +2,12 @@ package nl.thewally.cucumberwithselenium3.browser;
 
 import nl.thewally.cucumberwithselenium3.browser.types.Driver;
 import nl.thewally.cucumberwithselenium3.browser.types.Firefox;
+import nl.thewally.cucumberwithselenium3.browser.types.Phantomjs;
 
 public enum DriverType {
 
-    FIREFOX(Firefox.class);
-//    PHANTOMJS(Phantomjs.class),
+    FIREFOX(Firefox.class),
+    PHANTOMJS(Phantomjs.class);
 //    CHROME(Chrome.class),
 //    JBROWSER(JBrowser.class);
 
