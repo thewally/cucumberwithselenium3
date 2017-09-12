@@ -20,6 +20,8 @@ public class Firefox extends BaseDriver {
 
     @Override
     public DesiredCapabilities setHeader(Map<String, String> headers) {
+        System.setProperty("webdriver.gecko.driver", "/home/arjen/Software/geckodriver");
+
         FirefoxProfile profile = new FirefoxProfile();
         File modifyHeaders = new File(System.getProperty("user.dir")
                 + "/src/main/resources/modify_headers.xpi");
