@@ -1,5 +1,6 @@
 package nl.thewally.cucumberwithselenium3.stepdefs;
 
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -59,5 +60,14 @@ public class MyStepdefs {
     public void stopBrowser() throws Throwable {
         Thread.sleep(300000);
         LOG.info("Stop Browser for Test purposes.");
+    }
+
+    @After
+    public void close() {
+        try {
+            context.getBrowserDriver().quit();
+        } catch (Exception e) {
+
+        }
     }
 }
