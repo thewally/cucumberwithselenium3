@@ -2,6 +2,7 @@
 
 ## requirements
 * Firefox 53.0 or higher
+* Chome 60 or higher
 * JDK 1.8
 * GeckoDriver 0.18.0 or higher
 
