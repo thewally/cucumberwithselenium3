@@ -5,10 +5,10 @@
 * JDK 1.8
 * GeckoDriver 0.18.0 or higher
 
-## install firefox
+## install Firefox
 https://www.mozilla.org/firefox
 
-## install latest geckodriver
+## install latest GeckoDriver
 From: https://github.com/mozilla/geckodriver/releases
 
 ## set application.properties
