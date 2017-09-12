@@ -12,4 +12,7 @@ https://www.mozilla.org/firefox
 From: https://github.com/mozilla/geckodriver/releases
 
 ## set application.properties
+browser=[browser] **Supported browsers: FIREFOX, PHANTOMJS**
+
+
 pathToGeckoDriver=[path-to-geckodriver]
