@@ -3,6 +3,10 @@
 ## requirements
 * Firefox 53.0 or higher
 * JDK 1.8
+* GeckoDriver 0.18.0 or higher
+
+## install firefox
+https://www.mozilla.org/firefox
 
 ## install latest geckodriver
 From: https://github.com/mozilla/geckodriver/releases
