@@ -9,44 +9,52 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <cucumber-java.version>1.2.5</cucumber-java.version>
-        <cucumber-junit.version>1.2.5</cucumber-junit.version>
+        <!--build-->
+        <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+        <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
+        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <jdk-source.version>1.8</jdk-source.version>
+        <jdk-target.version>1.8</jdk-target.version>
+        <!--cucumber & junit-->
+        <cucumber.version>1.2.5</cucumber.version>
         <junit.version>4.12</junit.version>
-        <maven-compiler-plugin.version>2.1</maven-compiler-plugin.version>
+        <!--selenium-->
         <selenium.version>3.5.3</selenium.version>
-        <html-unit-driver.version>2.24</html-unit-driver.version>
-        <webdrivermanager.version>1.7.1</webdrivermanager.version>
+        <!--spring-->
+        <spring.version>4.3.7.RELEASE</spring.version>
+        <!--log-->
         <log4j-over-slf4j.version>1.7.22</log4j-over-slf4j.version>
         <jul-over-slf4j.version>1.7.22</jul-over-slf4j.version>
         <logback-classic.version>1.1.7</logback-classic.version>
-        <spring.version>4.3.7.RELEASE</spring.version>
-        <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
     </properties>
 
     <dependencies>
+        <!--cucumber-->
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>${cucumber-java.version}</version>
+            <version>${cucumber.version}</version>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber-junit.version}</version>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-spring</artifactId>
-            <version>${cucumber-java.version}</version>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
+        <!--junit-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!--selenium-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -59,14 +67,10 @@
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>htmlunit-driver</artifactId>
-            <version>${html-unit-driver.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+        <!--log-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -82,6 +86,7 @@
             <artifactId>jul-to-slf4j</artifactId>
             <version>${jul-over-slf4j.version}</version>
         </dependency>
+        <!--spring-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -92,22 +97,22 @@
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <!--properties-->
         <dependency>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>properties-maven-plugin</artifactId>
             <version>${properties-maven-plugin.version}</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>${jdk-source.version}</source>
+                    <target>${jdk-target.version}</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -131,7 +136,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
