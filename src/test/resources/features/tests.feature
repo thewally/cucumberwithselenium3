@@ -6,9 +6,6 @@ Feature: iDIN IDB System Tests Page Authenticate
 
   Scenario: Open authenticate screen as a user
     Given Set request headers
-      | x-auth-ticket | ticket123456789        |
-      | x-session-id  | RS0123456789012345     |
-      | x-auth-level  | 0                      |
-      | x-BRIT-host   | http://localhost:10501 |
-    When open idp authenticate screen with timestamp 0 seconds in the past
-    Then stop browser
+      | x-test-header1 | testtest1       |
+      | x-test-header2 | testtest2       |
+    When open url http://www.google.com

@@ -41,19 +41,10 @@ public class MyStepdefs {
         context.getBrowserDriver().setHeaders(headers);
     }
 
-    @When("^open idp authenticate screen with timestamp (\\d+) seconds in the (.*)$")
-    public void openIdpAuthenticateScreen(int seconds, String pastOrFuture) throws Throwable {
-        Date date = new Date();
-        long minusMilliSeconds = seconds*1000;
-        long milliseconds = date.getTime();
-        long result;
-        if(pastOrFuture.equals("future")) {
-            result = milliseconds + minusMilliSeconds;
-        } else {
-            result = milliseconds - minusMilliSeconds;
-        }
+    @When("^open url (.*)$")
+    public void openUrl(String url) throws Throwable {
         context.getBrowserDriver().init();
-        context.getBrowserDriver().openUrl("/idp/bankid/authenticate.htm?trxid=1234567890123456&idpid="+result+"-123456");
+        context.getBrowserDriver().openUrl(url);
     }
 
     @Then("^stop browser$")
