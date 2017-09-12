@@ -27,7 +27,7 @@ public class DriverFactory {
                     + "testdata.properties is not compatible. "
                     + "Change browser or implement new browser.");
             throw new RuntimeException(browser + " is not supported, supported "
-                    + "browsers are 'firefox', 'Chrome', 'phantomJS' and 'JBrowser'");
+                    + "browsers are 'firefox', 'Chrome' and 'phantomJS'");
         }
 
         return newDriverInstance(DriverType.getDriverType(browser));
