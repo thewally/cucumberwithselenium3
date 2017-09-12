@@ -6,7 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource(value = "testdata.properties")
+@PropertySource(value = "application.properties")
 public class TestProperties {
 
     @Autowired
