@@ -1,4 +1,4 @@
-# Cucumber with Selenium 3 and GeckoDriver
+# Cucumber with Selenium 3 with possibility to add headers
 
 ## requirements
 * Firefox 53.0 or higher
