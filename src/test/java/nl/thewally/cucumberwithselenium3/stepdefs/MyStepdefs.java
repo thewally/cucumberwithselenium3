@@ -46,6 +46,16 @@ public class MyStepdefs {
         context.getBrowserDriver().openUrl(url);
     }
 
+    @When("^Set cookies$")
+    public void setCookies(Map<String, String> cookies) throws Throwable {
+        context.getBrowserDriver().setCookies(cookies);
+    }
+
+    @When("^open location (.*)$")
+    public void openLocation(String url) throws Throwable {
+        context.getBrowserDriver().openUrl(url);
+    }
+
     @Then("^stop browser$")
     public void stopBrowser() throws Throwable {
         Thread.sleep(300000);
