@@ -1,6 +1,6 @@
-Feature: Test
+Feature: Feature
 
-  Scenario: Open authenticate screen as a user
+  Scenario: Scenario
     Given Set request headers
       | x-test-header1 | testtest1       |
       | x-test-header2 | testtest2       |
