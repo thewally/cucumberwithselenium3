@@ -8,3 +8,4 @@ Feature: Feature
     Given Set cookies
       |cookie|cookievalue|
     When open location http://www.google.com
+    Then cookie is created
