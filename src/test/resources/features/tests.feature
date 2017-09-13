@@ -1,8 +1,4 @@
-Feature: iDIN IDB System Tests Page Authenticate
-  In order to login
-  As a user
-  I need a screen that initiates the RASS Authentication
-
+Feature: Test
 
   Scenario: Open authenticate screen as a user
     Given Set request headers
