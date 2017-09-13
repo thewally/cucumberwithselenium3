@@ -1,15 +1,13 @@
 package nl.thewally.cucumberwithselenium3.browser;
 
-import nl.thewally.cucumberwithselenium3.browser.types.Chrome;
-import nl.thewally.cucumberwithselenium3.browser.types.Driver;
-import nl.thewally.cucumberwithselenium3.browser.types.Firefox;
-import nl.thewally.cucumberwithselenium3.browser.types.Phantomjs;
+import nl.thewally.cucumberwithselenium3.browser.types.*;
 
 public enum DriverType {
 
     FIREFOX(Firefox.class),
     PHANTOMJS(Phantomjs.class),
-    CHROME(Chrome.class);
+    CHROME(Chrome.class),
+    HTMLUNIT(HtmlUnit.class);
 
     private final Class<? extends Driver> driver;
 
