@@ -80,9 +80,9 @@ public class Browser {
         );
     }
 
-    public void setCookies(Map<String, String> cookies) throws Throwable {
+    public void setCookies(Map<String, String> cookies, String domain) throws Throwable {
         for (String key : cookies.keySet()) {
-            setCookie(key, cookies.get(key), "localhost", "/", false);
+            setCookie(key, cookies.get(key), domain, "/", false);
         }
     }
 

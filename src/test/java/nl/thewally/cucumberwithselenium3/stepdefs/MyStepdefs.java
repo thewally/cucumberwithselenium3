@@ -48,7 +48,7 @@ public class MyStepdefs {
 
     @When("^Set cookies$")
     public void setCookies(Map<String, String> cookies) throws Throwable {
-        context.getBrowserDriver().setCookies(cookies);
+        context.getBrowserDriver().setCookies(cookies, "google.nl");
     }
 
     @When("^open location (.*)$")
