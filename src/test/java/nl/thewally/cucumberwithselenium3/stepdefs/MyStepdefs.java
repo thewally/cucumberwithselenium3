@@ -1,5 +1,6 @@
 package nl.thewally.cucumberwithselenium3.stepdefs;
 
+import com.gargoylesoftware.htmlunit.*;
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -14,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,6 +70,12 @@ public class MyStepdefs {
     @Then("^cookie is created$")
     public void cookieIsCreated() throws Throwable {
         Assert.assertEquals("cookievalue", context.getBrowserDriver().getCookieByName("cookie"));
+    }
+
+    private static Object get(Object object, String field) throws Exception {
+        Field f = object.getClass().getDeclaredField(field);
+        f.setAccessible(true);
+        return f.get(object);
     }
 
     @After

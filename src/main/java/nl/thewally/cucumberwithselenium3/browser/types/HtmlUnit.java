@@ -1,5 +1,6 @@
 package nl.thewally.cucumberwithselenium3.browser.types;
 
+import com.gargoylesoftware.htmlunit.WebClient;
 import nl.thewally.cucumberwithselenium3.properties.TestProperties;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.Map;
 
 @Component
@@ -26,32 +28,15 @@ public class HtmlUnit extends BaseDriver {
         return LoggerFactory.getLogger(HtmlUnit.class);
     }
 
+    private Map<String, String> headers;
+
     @Override
     public DesiredCapabilities setHeader(Map<String, String> headers) {
-        FirefoxProfile profile = new FirefoxProfile();
-        File modifyHeaders = new File(System.getProperty("user.dir")
-                + "/src/main/resources/modify_headers.xpi");
-        profile.addExtension(modifyHeaders);
-        profile.setPreference("modifyheaders.headers.count", headers.size());
-
-        int i = 0;
-        for (String key : headers.keySet()) {
-            profile.setPreference("modifyheaders.headers.action" + i + "", "Add");
-            profile.setPreference("modifyheaders.headers.name" + i + "", "" + key + "");
-            profile.setPreference("modifyheaders.headers.value" + i + "", "" + headers.get(key) + "");
-            profile.setPreference("modifyheaders.headers.enabled" + i + "", true);
-            i++;
-        }
-
-        profile.setPreference("modifyheaders.config.active", true);
-        profile.setPreference("modifyheaders.config.alwaysOn", true);
+        this.headers = headers;
 
         DesiredCapabilities capabilities = DesiredCapabilities.htmlUnit();
         capabilities.setCapability("marionette", true);
         capabilities.setPlatform(Platform.ANY);
-
-        capabilities.setCapability(FirefoxDriver.PROFILE, profile);
-
         return capabilities;
     }
 
@@ -60,11 +45,28 @@ public class HtmlUnit extends BaseDriver {
         try {
             driver = (capabilities == null) ? new HtmlUnitDriver()
                     : new HtmlUnitDriver(capabilities);
+            if(headers!=null) {
+                WebClient webClient = null;
+                try {
+                    webClient = (WebClient) get(driver, "webClient");
+                    for (String key : headers.keySet()) {
+                        webClient.addRequestHeader(key, headers.get(key));
+                    }
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
             return driver;
         } catch (RuntimeException e) {
             logger.error("Error on trying to create fire fox driver instance", e);
             throw new RuntimeException("Error on creating new Firefox driver", e);
         }
+    }
+
+    private static Object get(Object object, String field) throws Exception {
+        Field f = object.getClass().getDeclaredField(field);
+        f.setAccessible(true);
+        return f.get(object);
     }
 
     @Override
