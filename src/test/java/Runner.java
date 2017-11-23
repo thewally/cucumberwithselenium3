@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         monochrome = true,
-        plugin = {"pretty", "html:target/cucumber"},
+        plugin = {"pretty", "json:target/cucumber"},
         dryRun = false,
         glue = {"nl.thewally.cucumberwithselenium3.stepdefs"},
         features = {"src/test/resources/features"}
